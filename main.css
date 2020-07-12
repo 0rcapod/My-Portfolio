@@ -1,0 +1,484 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  background: #ccdad1;
+  color: #2e3935;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+#section-title {
+  text-align: center;
+  padding: 2rem;
+  z-index: 3;
+}
+
+.bottom-line {
+  width: 50px;
+  height: 3px;
+  background: #fdc05d;
+  margin: 0 auto;
+}
+
+.lead {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.captcha {
+  margin: 2rem auto;
+}
+
+header {
+  background: url(./img/caleb-woods-R2lCJwGyqPQ-unsplash.jpg) no-repeat center center/cover;
+  height: 100vh;
+  color: #ccdad1;
+  position: relative;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(82, 121, 111, 0.2);
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+#navbar {
+  position: fixed;
+  color: #ccdad1;
+  width: 100%;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(46, 57, 53, 0.5);
+  padding: 1rem;
+  z-index: 1;
+}
+
+#navbar .logo {
+  color: #fdc05d;
+}
+
+#navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#navbar ul li {
+  margin-left: 1.5rem;
+}
+
+#navbar ul li a {
+  padding-bottom: 0.5rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#navbar ul li a:hover {
+  color: #fdc05d;
+  font-weight: bold;
+}
+
+#welcome-section {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 10%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#welcome-section h1,
+#welcome-section h3 {
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+#welcome-section h1 #name,
+#welcome-section h3 #name {
+  color: #fdc05d;
+}
+
+#welcome-section .txt-type {
+  text-align: center;
+  font-family: "Roboto Mono", sans-serif;
+}
+
+#projects {
+  width: 100%;
+}
+
+#projects .container-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 90%;
+  margin: 1rem auto;
+}
+
+#projects .container-flex .project-tile {
+  position: relative;
+  width: 32%;
+  max-width: 320px;
+  max-height: 250px;
+  margin: 1rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 10px #3d524b;
+          box-shadow: 0 0 10px #3d524b;
+}
+
+#projects .container-flex .project-tile img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#projects .container-flex .project-tile .tile-overlay {
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+#projects .container-flex .project-tile .tile-details {
+  position: absolute;
+  text-align: center;
+  font-weight: light;
+  color: #ccdad1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in 0.3s;
+  transition: all 0.2s ease-in 0.3s;
+  border-top: 2px solid #fdc05d;
+  border-bottom: 2px solid #fdc05d;
+}
+
+#projects .container-flex .project-tile:hover .tile-overlay {
+  opacity: 1;
+  top: 0;
+  height: 100%;
+}
+
+#projects .container-flex .project-tile:hover .tile-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+#about {
+  background: #3d524b;
+  color: #ccdad1;
+}
+
+#about .container-grid {
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+  gap: 2%;
+}
+
+#about .container-grid .image-container {
+  background-image: url(./img/AboutMe.JPG);
+  background-size: cover;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  border: 2px solid #fdc05d;
+}
+
+#about .container-grid .info {
+  width: 100%;
+  border-left: 2px solid #fdc05d;
+  padding: 1rem;
+  text-align: justify;
+}
+
+#about .container-grid .info h3 {
+  padding-bottom: 1rem;
+}
+
+#work-flow {
+  background: #ccdad1;
+}
+
+#work-flow .container-grid {
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+#work-flow .container-grid .work-flow-tile {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 5px #3d524b, 0 0 5px #3d524b;
+          box-shadow: 0 0 5px #3d524b, 0 0 5px #3d524b;
+}
+
+#work-flow .container-grid .work-flow-tile h3 {
+  padding: 1rem 0;
+}
+
+#contact {
+  background: #3d524b;
+  color: #ccdad1;
+}
+
+#contact p {
+  padding-bottom: 1rem;
+}
+
+#contact .container-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "name email" "number subject" "message message" "submit submit";
+  font-size: 1rem;
+  gap: 1rem;
+}
+
+#contact .container-grid input,
+#contact .container-grid #subject {
+  border-radius: 5px;
+  border: 2px solid #3d524b;
+  padding: 5px 10px;
+}
+
+#contact .container-grid #name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+}
+
+#contact .container-grid #email {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: email;
+}
+
+#contact .container-grid #number {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: number;
+}
+
+#contact .container-grid #subject {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: subject;
+}
+
+#contact .container-grid #message {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: message;
+  height: 150px;
+  resize: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  overflow: auto;
+  font-family: "Muli", sans-serif;
+  padding: 5px 10px;
+}
+
+#contact .container-grid #submit {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: submit;
+  border: 1px solid #3d524b;
+  border-radius: 5px;
+  background: #fdc05d;
+  cursor: pointer;
+  color: #2e3935;
+  padding: 0.5rem 0;
+  width: 50%;
+  margin: 0 auto;
+}
+
+footer {
+  background: #2e3935;
+  color: #ccdad1;
+}
+
+footer .footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+}
+
+footer .footer-content .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footer-content .social a {
+  padding: 0 1rem;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+footer .footer-content .social a i {
+  font-size: 1.5rem;
+}
+
+footer .footer-content .social a:hover {
+  color: #fdc05d;
+}
+
+@media only screen and (max-width: 700px) {
+  header {
+    background: url(./img/caleb-woods-R2lCJwGyqPQ-unsplash.jpg) no-repeat 50% 50%/cover;
+    height: 100vh;
+  }
+  #navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #projects .container-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #projects .container-flex .project-tile {
+    width: 100%;
+  }
+  #about .container-grid {
+    -ms-grid-columns: 95%;
+        grid-template-columns: 95%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+  }
+  #about .container-grid .image-container {
+    width: 100%;
+    min-height: 300px;
+  }
+  #about .container-grid .image-container img {
+    display: block;
+    margin: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #about .container-grid .info {
+    width: 100%;
+    border-left: none;
+    padding: 1rem;
+    text-align: justify;
+  }
+  #work-flow .container-grid {
+    -ms-grid-columns: 80%;
+        grid-template-columns: 80%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #contact {
+    padding: 0 1rem;
+  }
+  #contact .container-grid {
+        grid-template-areas: "name" "email" "number" "subject" "message" "submit" "submit";
+  }
+  .footer-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer-content p {
+    padding-bottom: 1rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
